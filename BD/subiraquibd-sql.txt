@@ -1,0 +1,4 @@
+subiraqui 
+bd-sql
+workshop
+fig de ER 

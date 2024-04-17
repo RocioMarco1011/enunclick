@@ -1,0 +1,109 @@
+<?php
+/**
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link      https://cakephp.org CakePHP(tm) Project
+ * @since     0.10.0
+ * @license   https://opensource.org/licenses/mit-license.php MIT License
+ * @var \App\View\AppView $this
+ */
+use Cake\Cache\Cache;
+use Cake\Core\Configure;
+use Cake\Core\Plugin;
+use Cake\Datasource\ConnectionManager;
+use Cake\Error\Debugger;
+use Cake\Http\Exception\NotFoundException;
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        Bienvenido a la vista del administrador
+        <?= $this->fetch('title') ?>
+    </title>
+    <?= $this->Html->meta('icon') ?>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'home']) ?>
+
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+</head>
+<body>
+<header>
+       
+            <h1>
+                Bienvenido a la vista del administrador 
+            </h1>
+            <h1>
+                Menú
+            </h1>
+            <style>
+                a{
+                    display:blok;
+                    width: 50px;
+                    font-family:Arial, Helvetica, sans-serif;
+                    font.weight:700;
+                    border-radius:10px;
+                    margin:0px 0px;
+                    padding: 10px 10px;
+                    background-color:#fff;
+                    color:#050709;
+                    text-decoration:none;
+                }
+                
+            </style>
+            <h3>
+            <a href="http://localhost:8765/rolestable" tarjet="_blank">Roles</a>
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/costumerstable" tarjet="_blank">Clientes</a> 
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/dailyregisterstable" tarjet="_blank">Registros diarios</a>
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/deliveriestable" tarjet="_blank">Entregas</a>
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/logisticstable" tarjet="_blank">Logistica</a>
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/offerstable" tarjet="_blank">Ofertas</a>
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/orderstable" tarjet="_blank">Pedidos</a> 
+             </h3>
+             <h3>
+             <a href="http://localhost:8765/paymenstable" tarjet="_blank">Pagos</a> 
+            </h3>
+             <h3>
+             <a href="http://localhost:8765/preferencetables" tarjet="_blank">Preferencia</a>   
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/supplierstable" tarjet="_blank">Proveedores</a>    
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/adstable" tarjet="_blank">Anuncios</a>    
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/productstable" tarjet="_blank">Productos</a>    
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/userstable" tarjet="_blank">Usuarios</a>    
+            </h3>
+            <h3>
+            <a href="http://localhost:8765/zonestable" tarjet="_blank">Zonas</a>    
+            </h3>
+    </header>
+</body>

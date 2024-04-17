@@ -1,0 +1,711 @@
+
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Adstable[]|\Cake\Collection\CollectionInterface $adstable
+ */
+?>
+<div class="adstable index content">
+    <?= $this->Html->link(__('Nuevo anuncio'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Anuncios') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('ads_id') ?></th>
+                    <th><?= $this->Paginator->sort('ads_names') ?></th>
+                    <th><?= $this->Paginator->sort('ads_start_dates') ?></th>
+                    <th><?= $this->Paginator->sort('ads_end_dates') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($adstable as $adstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($adstable->ads_id) ?></td>
+                    <td><?= h($adstable->ads_names) ?></td>
+                    <td><?= h($adstable->ads_start_dates) ?></td>
+                    <td><?= h($adstable->ads_end_dates) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $adstable->ads_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $adstable->ads_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $adstable->ads_id], ['confirm' => __('Are you sure you want to delete # {0}?', $adstable->ads_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+CLIENTES
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Costumerstable[]|\Cake\Collection\CollectionInterface $costumerstable
+ */
+?>
+<div class="costumerstable index content">
+    <?= $this->Html->link(__('Nuevo cliente'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Clientes') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('costumer_id') ?></th>
+                    <th><?= $this->Paginator->sort('costumer_names') ?></th>
+                    <th><?= $this->Paginator->sort('costumer_addresses') ?></th>
+                    <th><?= $this->Paginator->sort('costumer_phones') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($costumerstable as $costumerstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($costumerstable->costumer_id) ?></td>
+                    <td><?= h($costumerstable->costumer_names) ?></td>
+                    <td><?= h($costumerstable->costumer_addresses) ?></td>
+                    <td><?= $this->Number->format($costumerstable->costumer_phones) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $costumerstable->costumer_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $costumerstable->costumer_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $costumerstable->costumer_id], ['confirm' => __('Are you sure you want to delete # {0}?', $costumerstable->costumer_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+REGISTROS DIARIOS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Dailyregisterstable[]|\Cake\Collection\CollectionInterface $dailyregisterstable
+ */
+?>
+<div class="dailyregisterstable index content">
+    <?= $this->Html->link(__('Nuevo registro diario'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Registros diarios') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('register_id') ?></th>
+                    <th><?= $this->Paginator->sort('register_status') ?></th>
+                    <th><?= $this->Paginator->sort('daily_initial_cashes') ?></th>
+                    <th><?= $this->Paginator->sort('daily_final_cashes') ?></th>
+                    <th><?= $this->Paginator->sort('register_dates') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($dailyregisterstable as $dailyregisterstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($dailyregisterstable->register_id) ?></td>
+                    <td><?= h($dailyregisterstable->register_status) ?></td>
+                    <td><?= $dailyregisterstable->daily_initial_cashes === null ? '' : $this->Number->format($dailyregisterstable->daily_initial_cashes) ?></td>
+                    <td><?= $dailyregisterstable->daily_final_cashes === null ? '' : $this->Number->format($dailyregisterstable->daily_final_cashes) ?></td>
+                    <td><?= h($dailyregisterstable->register_dates) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $dailyregisterstable->register_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $dailyregisterstable->register_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $dailyregisterstable->register_id], ['confirm' => __('Are you sure you want to delete # {0}?', $dailyregisterstable->register_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+ENTREGAS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Deliveriestable[]|\Cake\Collection\CollectionInterface $deliveriestable
+ */
+?>
+<div class="deliveriestable index content">
+    <?= $this->Html->link(__('Nueva entrega'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Entregas') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('delivery_man_id') ?></th>
+                    <th><?= $this->Paginator->sort('delivery_man_names') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($deliveriestable as $deliveriestable): ?>
+                <tr>
+                    <td><?= $this->Number->format($deliveriestable->delivery_man_id) ?></td>
+                    <td><?= h($deliveriestable->delivery_man_names) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $deliveriestable->delivery_man_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $deliveriestable->delivery_man_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $deliveriestable->delivery_man_id], ['confirm' => __('Are you sure you want to delete # {0}?', $deliveriestable->delivery_man_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+LOGISTICA
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Logisticstable[]|\Cake\Collection\CollectionInterface $logisticstable
+ */
+?>
+<div class="logisticstable index content">
+    <?= $this->Html->link(__('New Logisticstable'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Logistica') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('logistics_id') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($logisticstable as $logisticstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($logisticstable->logistics_id) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $logisticstable->logistics_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $logisticstable->logistics_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $logisticstable->logistics_id], ['confirm' => __('Are you sure you want to delete # {0}?', $logisticstable->logistics_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+OFERTAS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Offerstable[]|\Cake\Collection\CollectionInterface $offerstable
+ */
+?>
+<div class="offerstable index content">
+    <?= $this->Html->link(__('Nueva oferta'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Ofertas') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('offers_id') ?></th>
+                    <th><?= $this->Paginator->sort('offer_names') ?></th>
+                    <th><?= $this->Paginator->sort('offer_start_dates') ?></th>
+                    <th><?= $this->Paginator->sort('offer_final_dates') ?></th>
+                    <th><?= $this->Paginator->sort('offer_prices') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($offerstable as $offerstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($offerstable->offers_id) ?></td>
+                    <td><?= h($offerstable->offer_names) ?></td>
+                    <td><?= h($offerstable->offer_start_dates) ?></td>
+                    <td><?= h($offerstable->offer_final_dates) ?></td>
+                    <td><?= $offerstable->offer_prices === null ? '' : $this->Number->format($offerstable->offer_prices) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $offerstable->offers_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $offerstable->offers_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $offerstable->offers_id], ['confirm' => __('Are you sure you want to delete # {0}?', $offerstable->offers_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+PEDIDOS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Orderstable[]|\Cake\Collection\CollectionInterface $orderstable
+ */
+?>
+<div class="orderstable index content">
+    <?= $this->Html->link(__('Nuevo pedido'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Pedidos') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('orders_id') ?></th>
+                    <th><?= $this->Paginator->sort('order_addresses') ?></th>
+                    <th><?= $this->Paginator->sort('referencess') ?></th>
+                    <th><?= $this->Paginator->sort('dates') ?></th>
+                    <th><?= $this->Paginator->sort('times') ?></th>
+                    <th><?= $this->Paginator->sort('fees') ?></th>
+                    <th><?= $this->Paginator->sort('status') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($orderstable as $orderstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($orderstable->orders_id) ?></td>
+                    <td><?= h($orderstable->order_addresses) ?></td>
+                    <td><?= h($orderstable->referencess) ?></td>
+                    <td><?= h($orderstable->dates) ?></td>
+                    <td><?= h($orderstable->times) ?></td>
+                    <td><?= $orderstable->fees === null ? '' : $this->Number->format($orderstable->fees) ?></td>
+                    <td><?= h($orderstable->status) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $orderstable->orders_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $orderstable->orders_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $orderstable->orders_id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderstable->orders_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+PAGOS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Paymentstable[]|\Cake\Collection\CollectionInterface $paymentstable
+ */
+?>
+<div class="paymentstable index content">
+    <?= $this->Html->link(__('Nuevo pago'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Pagos') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('payment_id') ?></th>
+                    <th><?= $this->Paginator->sort('payment_methods') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($paymentstable as $paymentstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($paymentstable->payment_id) ?></td>
+                    <td><?= h($paymentstable->payment_methods) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $paymentstable->payment_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $paymentstable->payment_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $paymentstable->payment_id], ['confirm' => __('Are you sure you want to delete # {0}?', $paymentstable->payment_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+PREFERENCIA
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Preferencetable[]|\Cake\Collection\CollectionInterface $preferencetables
+ */
+?>
+<div class="preferencetables index content">
+    <?= $this->Html->link(__('Nueva preferencia'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Preferencia') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('preferents_id') ?></th>
+                    <th><?= $this->Paginator->sort('preferent_fees') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($preferencetables as $preferencetable): ?>
+                <tr>
+                    <td><?= $this->Number->format($preferencetable->preferents_id) ?></td>
+                    <td><?= $preferencetable->preferent_fees === null ? '' : $this->Number->format($preferencetable->preferent_fees) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $preferencetable->preferents_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $preferencetable->preferents_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $preferencetable->preferents_id], ['confirm' => __('Are you sure you want to delete # {0}?', $preferencetable->preferents_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+PRODUCTOS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Productstable[]|\Cake\Collection\CollectionInterface $productstable
+ */
+?>
+<div class="productstable index content">
+    <?= $this->Html->link(__('Nuevo producto'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Productos') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('order_id') ?></th>
+                    <th><?= $this->Paginator->sort('order_quantities') ?></th>
+                    <th><?= $this->Paginator->sort('order_prices') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($productstable as $productstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($productstable->order_id) ?></td>
+                    <td><?= $productstable->order_quantities === null ? '' : $this->Number->format($productstable->order_quantities) ?></td>
+                    <td><?= $productstable->order_prices === null ? '' : $this->Number->format($productstable->order_prices) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $productstable->order_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $productstable->order_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $productstable->order_id], ['confirm' => __('Are you sure you want to delete # {0}?', $productstable->order_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+ROLES
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Rolestable[]|\Cake\Collection\CollectionInterface $rolestable
+ */
+?>
+<div class="rolestable index content">
+    <?= $this->Html->link(__('Nuevo rol'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Roles') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('roles_id') ?></th>
+                    <th><?= $this->Paginator->sort('roles') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($rolestable as $rolestable): ?>
+                <tr>
+                    <td><?= $this->Number->format($rolestable->roles_id) ?></td>
+                    <td><?= h($rolestable->roles) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $rolestable->roles_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $rolestable->roles_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $rolestable->roles_id], ['confirm' => __('Are you sure you want to delete # {0}?', $rolestable->roles_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+PROVEEDORES
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Supplierstable[]|\Cake\Collection\CollectionInterface $supplierstable
+ */
+?>
+<div class="supplierstable index content">
+    <?= $this->Html->link(__('Nuevo proovedor'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Proveedores') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('supplier_id') ?></th>
+                    <th><?= $this->Paginator->sort('supplier_names') ?></th>
+                    <th><?= $this->Paginator->sort('supplier_addresses') ?></th>
+                    <th><?= $this->Paginator->sort('supplier_phones') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($supplierstable as $supplierstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($supplierstable->supplier_id) ?></td>
+                    <td><?= h($supplierstable->supplier_names) ?></td>
+                    <td><?= h($supplierstable->supplier_addresses) ?></td>
+                    <td><?= $this->Number->format($supplierstable->supplier_phones) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $supplierstable->supplier_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $supplierstable->supplier_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $supplierstable->supplier_id], ['confirm' => __('Are you sure you want to delete # {0}?', $supplierstable->supplier_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+USUARIOS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Userstable[]|\Cake\Collection\CollectionInterface $userstable
+ */
+?>
+<div class="userstable index content">
+    <?= $this->Html->link(__('Nuevo usuario'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <h3><?= __('Usuarios') ?></h3>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('users_id') ?></th>
+                    <th><?= $this->Paginator->sort('users') ?></th>
+                    <th><?= $this->Paginator->sort('passwords') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($userstable as $userstable): ?>
+                <tr>
+                    <td><?= $this->Number->format($userstable->users_id) ?></td>
+                    <td><?= h($userstable->users) ?></td>
+                    <td><?= h($userstable->passwords) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $userstable->users_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $userstable->users_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $userstable->users_id], ['confirm' => __('Are you sure you want to delete # {0}?', $userstable->users_id)]) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
+ZONAS
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Zonestable[]|\Cake\Collection\CollectionInterface $zonestable
+ * @var \App\Model\Entity\Rolestable[]|\Cake\Collection\CollectionInterface $rolestable
+ */
+?>
+<div class="zonestable index content">
+    
+    <h3><?= __('Zona') ?></h3>
+    <?= $this->Html->link(__('Zonas'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <div class="table-responsive">
+    <h3>
+        <a href="http://localhost:8765" tarjet="_blank">Regresar</a>
+    </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th><?= $this->Paginator->sort('zones_id') ?></th>
+                    <th><?= $this->Paginator->sort('roles_id') ?></th>
+                    <th class="actions"><?= __('Actions') ?></th>
+                    <th class="actionsl"><?= __('Actionsl') ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($zonestable as $zonestable): ?>
+                <tr>
+                    <td><?= $this->Number->format($zonestable->zones_id) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(__('View'), ['action' => 'view', $zonestable->zones_id]) ?>
+                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $zonestable->zones_id]) ?>
+                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $zonestable->zones_id], ['confirm' => __('Estas seguro que quieres eliminar # {0}?', $zonestable->zones_id)]) ?>
+                    </td>
+                    
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginator">
+        <ul class="pagination">
+            <?= $this->Paginator->first('<< ' . __('first')) ?>
+            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->last(__('last') . ' >>') ?>
+        </ul>
+        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
+    </div>
+</div>
